@@ -1,7 +1,8 @@
 import { useState, useSyncExternalStore } from "react";
 
-function LightSwitchButton() {
+function LightSwitchButton(props) {
 
+  
   const [light, setLight] = useState("off");
   const handleClick = (event) => {
     if (light==="off") {
@@ -13,8 +14,8 @@ function LightSwitchButton() {
 
   return (
     <button className="LightSwitchButton" onClick={handleClick}>
-    {light === "on" && <span style={{backgroundColor:"yellow"}}><i>💡</i> I'm on!</span>}
-    {light === "off" && <span style={{backgroundColor:"grey"}} className="off"><i>💡</i> I'm off!</span>}
+    {light === "on" && <span><i>💡</i> I'm on!</span>}
+    {light === "off" && <span className="off"><i>💡</i> I'm off!</span>}
   </button>
   );
 }
